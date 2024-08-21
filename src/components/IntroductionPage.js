@@ -13,7 +13,7 @@ import StarInventoryPage from './StarInventoryPage';
 import ReviewInventoryPage from './ReviewInventoryPage';
 
 
-const IntroductionPage = () => {
+const IntroductionPage = () => {//Here we have the introduction page. Review Inventory page and Stars Inventory page. with images of all vehicles we have in stock. 
   return (
     <div className="p-8">
       <section>
@@ -25,6 +25,7 @@ const IntroductionPage = () => {
           2016 Ford F-150 V6        85000 miles     Pros: Best-in-class crash-test scores, Cons: Aluminum body panels can be more expensive to repair than steel (3.5 star rating)          
         </p>
         <ReviewInventoryPage />
+
         <img src={img2} className="img-thumbnail" alt="Img2" width="200" height="110" /> <StarInventoryPage />
         <p>
           2020 Ford Fusion V6       45000 miles     Pros: Adept combination of sharp handling and a composed ride, Cons: Underwhelming acceleration from base engine (4.5 star rating)

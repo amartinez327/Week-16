@@ -6,7 +6,7 @@ const ResourcesPage = () => {
   return (
     <Card>
     <Card.Body>
-        <h2>Here is where I plan to put resourse link</h2>
+        <h2>Leave a comment about the vehicle</h2>
         <InventoryListPage />
     </Card.Body>
     </Card>

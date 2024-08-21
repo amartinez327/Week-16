@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 import StarInventoryPage from './StarInventoryPage';//here is my review form page
 
+
 const ReviewInventoryPage = () => {
   const [formData, setFormData] = useState({
     name: '',
-    rating: '',
+    rating: 0,
     comment: ''
   });
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
+    let { name, value } = e.target;
+    if( name === "rating"){
+      value = parseInt(value)
+    }
     setFormData({ ...formData, [name]: value });
   };
 
@@ -17,23 +21,46 @@ const ReviewInventoryPage = () => {
     e.preventDefault();
     // Handle form submission here (e.g., send data to backend)
     console.log(formData); // For demo purposes
+    //Call the API Post Request Function and pass in formData
   };
 
+//API Post Request function
+// const ApiURL = "https://669a8f1c9ba098ed61001030.mockapi.io/Week_15_API/review-inventory"
+
+async function getData() {//Here I have added a fetch to request data from URL as instructed. 
+  const url = "https://669a8f1c9ba098ed61001030.mockapi.io/Week_15_API/review-inventory";
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+
+    const json = await response.json();
+    console.log(json);
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+  
+
+
   return (
-    <form onSubmit={handleSubmit}>
+    <form className='flex flex-wrap' onSubmit={handleSubmit}>
       <label>
-        Name:
+        Email:
         <input
           type="text"
-          name="name"
+          className='form-control'
+          name="email"
           value={formData.name}
           onChange={handleInputChange}
         />
       </label>
       <br />
       <label>
-        Rating:
+        Rating 1-10:
         <input
+        className='form-control'
           type="number"
           name="rating"
           value={formData.rating}
@@ -41,16 +68,17 @@ const ReviewInventoryPage = () => {
         />
       </label>
       <br />
-      <label>
+      <label >
         Comment:
         <textarea
           name="comment"
+          className='form-control'
           value={formData.comment}
           onChange={handleInputChange}
         />
       </label>
       <br />      
-      <button type="submit">Submit</button>
+      <button type="submit">Contact Salesmen</button>
     </form>
   );
 };

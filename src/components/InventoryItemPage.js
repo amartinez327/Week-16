@@ -10,7 +10,7 @@ console.log("Inventory Item Data:", item);
   return (
  
   <div className="inventory-item">
-    <h3>{item.vehicleYear} {item.vehicleMake} {item.vehicleModel}</h3>
+    <h3>{item.vehicleYear} {item.vehicleMake} {item.vehicleModel} {item.comment}</h3>
     <br />
     Item Id: {item.id}
   </div>

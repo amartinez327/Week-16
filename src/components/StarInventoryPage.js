@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { FaStar } from 'react-icons/fa';//here is my star page. 
+import { FaStar } from 'react-icons/fa'; 
 
-function StarInventoryPage() {
+function StarInventoryPage() {//Here we have the star page that shows up on the home page. 
 
     const [rating, setRating] = useState(null)
     const [rateColor, setColor] = useState(null)

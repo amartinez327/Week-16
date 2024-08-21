@@ -4,9 +4,9 @@ import TitlePage from './TitlePage';
 import IntroductionPage from './IntroductionPage';
 
 
-function HomePage() {
+function HomePage() {//Here we are calling the Title page and Introduction page. Also placing an image in the center of the page. 
     return (
-        <div className="HomePage">
+        <div className="HomePage container">
             <main>                
                 <TitlePage />
                 <br />

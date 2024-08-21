@@ -6,22 +6,23 @@ import ResourcesPage from './components/ResourcesPage';
 import FooterPage from './components/FooterPage';
 import Navbar from './components/Navbar';
 import {
-  BrowserRouter as Router,
   Routes,
   Route,
  } from 'react-router-dom'
 
-function App() {
+function App() {//Here we have the routes that call in the Home page, About page and Resources page. 
   return (
-   <Router>
-    <Navbar sticky="top" />
-    <Routes>
-      <Route path='/' element={<HomePage />}/>
-      <Route path='/About' element={<AboutPage />}/>
-      <Route path='/Resources' element={<ResourcesPage />}/>
-    </Routes>
-    <FooterPage fixed="bottom" />
-   </Router>
+   <div>
+     
+      <Navbar sticky="top" />
+      <Routes>
+        <Route path='/' element={<HomePage />}/>
+        <Route path='/About' element={<AboutPage />}/>
+        <Route path='/Resources' element={<ResourcesPage />}/>
+      </Routes>
+      <FooterPage fixed="bottom" />
+     
+   </div>
   );
 }
 export default App;

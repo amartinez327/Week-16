@@ -1,14 +1,16 @@
 import React from 'react';
 import {Container, Nav, Navbar} from 'react-bootstrap';
+import {Link} from 'react-router-dom'
+
 
 const NavBar = () => {
     return (
-        <Navbar expand="lg" bg='secondary' variant="light">
+        <Navbar expand="lg" bg='secondary' >
             <Container>
-                <Nav className="me-auto">
-                    <Nav.Link href="#HomePage">Home</Nav.Link>
-                    <Nav.Link href="#AboutPage">About</Nav.Link>
-                    <Nav.Link href="#ResourcesPage">Resources</Nav.Link>
+                <Nav className="header">
+                    <Nav.Link ><Link to="/">Home</Link></Nav.Link>
+                    <Nav.Link><Link to="/About">About</Link></Nav.Link>
+                    <Nav.Link ><Link to="/Resources">Resources</Link></Nav.Link>
                 </Nav>
             </Container>
         </Navbar>
